@@ -65,7 +65,7 @@ process {
     # Check that the word is in the hashtable for processing.
     if ($WordValues[$word]) {
         # Get the log value. Add 1 in case the word only appears once (and thus returns a zero)
-        $WordValue *= (1 + [math]::Log($WordValues[$word]))
+        $WordValue *= $WordValues[$word]
     }
 
     [PSCustomObject]@{
