@@ -16,8 +16,6 @@
     Default (blank) will be to load from words.txt in the script root.
     To generate a words.txt file, I downloaded the alpha list from https://github.com/dwyl/english-words
     Then it's a simple matter of: Get-Content .\words_alpha.txt | Select-String -Pattern "^[a-zA-Z]{5}$" | Set-Content .\Words.txt
-.PARAMETER OutputSize
-    After filtering the words from most to least probable, this will reduce the output to something manageable.
 .PARAMETER Green
     Five character string that can contain only letters or underscore.
 
