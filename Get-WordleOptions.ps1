@@ -65,6 +65,10 @@ param (
     [System.Collections.Generic.List[string]]$AmberArray,
 
     # String of grey letters
+    [ValidatePattern(
+        "^[a-zA-Z]*$",
+        ErrorMessage = "You must only use letters, a to z"
+    )]
     [string]$Grey
 )
 
