@@ -43,6 +43,10 @@
 [CmdletBinding()]
 param (
     # List of valid english five-letter words to search from
+    [ValidatePattern(
+        "^[a-zA-Z]{5}$",
+        ErrorMessage = "Each word in the list must contain exactly five characters, a to z."
+    )]
     [string[]]$WordList=(Get-Content -Path (Join-Path -Path $PSScriptRoot -ChildPath "words.txt") -ErrorAction stop),
 
     # Letters that are 'locked-in' - use underscore for blanks. Must contain five characters.
