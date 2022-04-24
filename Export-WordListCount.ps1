@@ -13,6 +13,7 @@ param (
 $Books = Get-ChildItem -Path (Join-Path -Path $BookPath -ChildPath "*.txt")
 
 $WordHash = @{}
+$WordHashLog = @{}
 
 foreach ($Book in $Books) {
     $Content = Get-Content -Path $Book
@@ -31,6 +32,10 @@ foreach ($Book in $Books) {
     })
 }
 
-$WordHash | 
+$WordHash.GetEnumerator().ForEach({
+    $WordHashLog["$($_.Name)"] = (1+[math]::Round([math]::Log($_.Value),3))
+})
+
+$WordHashLog | 
     ConvertTo-Json | 
     Set-Content -Path (Join-Path -Path $ExportPath -ChildPath "WordValues.json") -Force
