@@ -120,7 +120,7 @@ if ($Green) {
 if ((-not $Green) -and (-not $AmberArray) -and (-not $Grey)) {
     Write-Warning "You must select at least one of: Green, AmberList or Grey. Otherwise you'd be returning all the words you put in..."
 
-# ...and if we do, format the output
+# ...and if we do, output it
 } else {
     
     $WordList    
