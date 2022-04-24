@@ -22,5 +22,7 @@ Then it's a simple matter of: Get-Content .\words_alpha.txt | Select-String -Pat
 ### WordValues.json
 Generated from the Export-WordListCount.ps1 above.
 
+The initial list was generated from 50 different books downloaded from Project Gutenberg. Semi-random, going down the most popular list and picking ones I recognised...
+
 ### LetterValues.json
 Created this by getting the frequency of letters from the WordValues.json file, and storing the log value of that frequency.
