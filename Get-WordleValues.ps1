@@ -23,9 +23,16 @@
     greet 22.433
     ...
 .OUTPUTS
-    [string[]]
+    TypeName: System.Management.Automation.PSCustomObject
 
-    Array of words, sorted into probability order.
+    Name        MemberType   Definition
+    ----        ----------   ----------
+    Equals      Method       bool Equals(System.Object obj)
+    GetHashCode Method       int GetHashCode()
+    GetType     Method       type GetType()
+    ToString    Method       string ToString()
+    Value       NoteProperty double 
+    Word        NoteProperty string
 .LINK
     https://www.nytimes.com/games/wordle/index.html
 #>
